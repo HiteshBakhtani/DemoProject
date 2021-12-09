@@ -1,0 +1,118 @@
+﻿@model DemoProject.Models.ApplicationModel
+
+@{
+    ViewData["Title"] = "Create Application";
+}
+
+<h1>Create Application</h1>
+
+<hr />
+<h3>Basic Details</h3>
+
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="ApplicationCreate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <textarea asp-for="Address" class="form-control"></textarea>
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <select asp-for="Gender" asp-items="@ViewBag.gender" class="form-control">
+                    <option value="0">Select Gender</option>
+                </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contact" class="control-label"></label>
+                <input asp-for="Contact" class="form-control" />
+                <span asp-validation-for="Contact" class="text-danger"></span>
+            </div>
+
+            <hr />
+            <h3>Education Details</h3>
+            <br />
+            <br />
+            <h4>SSC</h4>
+
+            <div class="form-group">
+                <label asp-for="SSC_Board" class="control-label"></label>
+                <input asp-for="SSC_Board" class="form-control" />
+                <span asp-validation-for="SSC_Board" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SSC_Year" class="control-label"></label>
+                <input asp-for="SSC_Year" class="form-control" />
+                <span asp-validation-for="SSC_Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SSC_Percentage" class="control-label"></label>
+                <input asp-for="SSC_Percentage" class="form-control" />
+                <span asp-validation-for="SSC_Percentage" class="text-danger"></span>
+            </div>
+
+            <hr />
+            <h4>HSC</h4>
+
+            <div class="form-group">
+                <label asp-for="HSC_Board" class="control-label"></label>
+                <input asp-for="HSC_Board" class="form-control" />
+                <span asp-validation-for="HSC_Board" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HSC_Year" class="control-label"></label>
+                <input asp-for="HSC_Year" class="form-control" />
+                <span asp-validation-for="HSC_Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HSC_Percentage" class="control-label"></label>
+                <input asp-for="HSC_Percentage" class="form-control" />
+                <span asp-validation-for="HSC_Percentage" class="text-danger"></span>
+            </div>
+
+            <hr />
+            <h4>Graduation</h4>
+
+            <div class="form-group">
+                <label asp-for="Graduation_Board" class="control-label"></label>
+                <input asp-for="Graduation_Board" class="form-control" />
+                <span asp-validation-for="Graduation_Board" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Graduation_Year" class="control-label"></label>
+                <input asp-for="Graduation_Year" class="form-control" />
+                <span asp-validation-for="Graduation_Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Graduation_Percentage" class="control-label"></label>
+                <input asp-for="Graduation_Percentage" class="form-control" />
+                <span asp-validation-for="Graduation_Percentage" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

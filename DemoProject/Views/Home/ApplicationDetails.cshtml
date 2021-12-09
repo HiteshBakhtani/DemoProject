@@ -1,0 +1,107 @@
+﻿@model DemoProject.Models.ApplicationModel
+
+@{
+    ViewData["Title"] = "Application Details";
+}
+
+<h1>Application Details</h1>
+
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Contact)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Contact)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SSC_Board)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SSC_Board)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SSC_Year)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SSC_Year)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SSC_Percentage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SSC_Percentage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HSC_Board)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HSC_Board)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HSC_Year)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HSC_Year)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HSC_Percentage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HSC_Percentage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Graduation_Board)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Graduation_Board)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Graduation_Year)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Graduation_Year)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Graduation_Percentage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Graduation_Percentage)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="ApplicationEdit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

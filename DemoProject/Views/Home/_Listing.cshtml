@@ -1,0 +1,51 @@
+﻿@model DemoProject.ViewModel.ApplicationListingModel
+
+@if (Model != null && Model.Applications != null && Model.Applications.Count() > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Contact</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var application in Model.Applications)
+            {
+            <tr>
+                <td>
+                    @application.Name
+                </td>
+                <td>
+                    @application.Email
+                </td>
+                <td>
+                    @application.Contact
+                </td>
+                <td>
+                    <button type="button" class="data-btn btn btn-info" onclick="window.location.href = '@Url.Action("ApplicationDetails", "Home", new { ID = application.ID })';">
+                        <i class="fa fa-edit mr-1"></i> View
+                    </button>
+
+                    <button data-href="@Url.Action("ApplicationEdit","Home", new { ID = application.ID })" type="button" class="data-btn btn btn-primary" onclick="window.location.href = '@Url.Action("ApplicationEdit", "Home", new { ID = application.ID })';">
+                        <i class="fa fa-edit mr-1"></i> Edit
+                    </button>
+
+                    <button type="button" class="data-btn btn btn-danger" onclick="window.location.href = '@Url.Action("ApplicationDelete", "Home", new { ID = application.ID })';">
+                        <i class="fa fa-trash mr-1"></i> Delete
+                    </button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning" role="alert">
+        Sorry! No records exist.
+    </div>
+}

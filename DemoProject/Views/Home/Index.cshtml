@@ -1,0 +1,36 @@
+﻿@model DemoProject.ViewModel.ApplicationListingModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col col-lg-12">
+        <h2>Applications</h2>
+        <hr />
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col col-lg-12">
+        <form>
+            <div class="input-group">
+                <input type="text" name="searchterm" class="form-control" placeholder="Search." value="@Model.SearchTerm" required>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary" type="submit"><i class="fa fa-search mr-1"></i> Search</button>
+                    <a class="btn btn-outline-secondary" href="@Url.Action("Index","Home")">
+                        <i class="fa fa-power-off mr-1"></i>
+                        Reset
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col col-lg-12">
+        @{
+            Html.RenderPartial("_Listing", Model);
+        }
+    </div>
+</div>
